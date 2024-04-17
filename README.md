@@ -4,4 +4,4 @@
 >Aquí podemos ir documentando nuestro proyecto o haciendo un manual de uso
 
 ## Tareas
-[ ] Hacer grupos
+- [ ] Hacer grupos
