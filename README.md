@@ -5,11 +5,7 @@
 >[!TIP]
 >Aquí podemos ir documentando nuestro proyecto o haciendo un manual de uso
 ## EXTRA
-// question: 1641210  name: PREGUNTA 12
-
-
-// question: 1641211  name: PREGUNTA 8
-::PREGUNTA 8::[html]<p>Clasificar los siguientes dispositivos<br></p>{
+<p>Clasificar los siguientes dispositivos<br></p>{
 	=<p>Teclado <br></p> -> Periférico de entrada
 	=<p>Altavoces<br></p> -> Periférico de salida
 	=<p>Ratón<br></p> -> Periférico de entrada
