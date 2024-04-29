@@ -1,4 +1,4 @@
-# Proyecto de gestión de reservas de aulas
+# Proyecto E2T
 ![SVERGA](https://github.com/CIS-TIC/Proyecto/blob/main/SVERGA.png)
 ## Tareas
 ### Arquitectura
