@@ -6,5 +6,8 @@
 - [ ] Preparar contenedores (Apache y MySQL)
 ### Aplicación
 - [ ] Realizar plantillas HTML+CSS
+
+>[!TIP]
+>+ USUARIOS: Cambiar/anular solicitud aprobada?
 ## Documentación
 
