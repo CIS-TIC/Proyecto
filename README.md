@@ -9,5 +9,6 @@
 
 >[!TIP]
 >+ USUARIOS: Cambiar/anular solicitud aprobada?
+>+ 
 ## Documentación
 
