@@ -3,14 +3,15 @@
 ## Tareas
 ### Arquitectura
 - [ ] Montar DB
+- [ ] Pasar esquema relacional a la DB
 - [ ] Preparar contenedores (Apache y MySQL)
 ### Aplicación
-- [ ] Realizar plantillas HTML+CSS
 - [ ] Diseño nuevas pantallas
+- [ ] Preparación de Bootstrap
+- [ ] Realizar plantillas HTML+CSS
 
 >[!TIP]
 >+ USUARIOS: Cambiar/anular solicitud aprobada?
->+ 
 ## Documentación
 :link:[Enlace carpeta de contenidos](https://minisdefear-my.sharepoint.com/:f:/g/personal/escanoasaugue_minisdefear_onmicrosoft_com/EtAFxpsyZkxMo7nGqYn215gBakcX1UwHNWfo752WsTBJoQ?e=5LR0RJ)
 ### Relacional DB
