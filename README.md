@@ -17,12 +17,9 @@
 ### Relacional DB
 | ENTIDAD | ATRIBUTOS |
 | --- | --- |
-| usuario | (**idusuario**, nombre, apellido1, apellido2, empleo, mail, telefono) |
-| dotacion | (*fk_usuario*, departamento) |
-| coordinador | (*fk_usuario*) |
-| administrador | (*fk_usuario*) |
-| reservas | (**id**, *FK_DOTACION*, *FK_COORDIANDOR*, *FK_HORARIO*, *FK_AULA*, NºAlumnos, Civil/Militar, Ejercito) |
-| aulas | (**Id**, Edificio, Nombre, Capacidad, Puestos, Modulo, Superficie, Equipamiento, ZAR, RAP, Red Ossorio, WAN-PG, Proyector, Pantalla inteligente, Extras) |
-| horarios | (**Tipo**, NºHora, **Inicio**, **Fin**) |
+| usuarios | (**idusuario**, nombre, apellido1, apellido2, empleo, mail, telefono, departamento, rol) |
+| reservas | (**idreserva**, *fk_solicitante*, *fk_autorizador*, *fk_horario_tipo*, *fk_horario_inicio*, *fk_horario_fin*, *fk_aula*, num_alumnos, civil_militar, ejercito) |
+| aulas | (**idaula**, **edificio**, nombre, capacidad, puestos, modulo, zar, rap, red_ossorio, wan_pg, proyector, pizarra_digital, extras) |
+| horarios | (**tipo**, num_hora, **inicio**, **fin**) |
 
 
