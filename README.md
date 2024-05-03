@@ -4,7 +4,7 @@
 ### Arquitectura
 - [ ] Montar DB
 - [ ] Pasar esquema relacional a la DB
-- [ ] Preparar contenedores (Apache y MySQL)
+- [X] Preparar contenedores (Apache, MySQL y NGINX)
 ### Aplicación
 - [ ] Diseño nuevas pantallas
 - [ ] Preparación de Bootstrap
