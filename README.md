@@ -3,7 +3,7 @@
 ## Tareas
 ### Arquitectura
 - [ ] Montar DB
-- [ ] Pasar esquema relacional a la DB
+- [X] Pasar esquema relacional a la DB
 - [X] Preparar contenedores (Apache, MySQL y NGINX)
 ### Aplicación
 - [ ] Diseño nuevas pantallas
