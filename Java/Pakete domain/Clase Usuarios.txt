@@ -21,6 +21,7 @@ public class Usuarios /*implements Serializable */{
     private String Apellidos;
     private String Empleo;
     private String Email;
+    private String Departamento;
     private String Telefono;
     private String Rol;
 }
