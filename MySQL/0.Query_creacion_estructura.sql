@@ -15,7 +15,7 @@ CREATE TABLE `sverga`.`dotacion` (
 `departamento` NVARCHAR(20) NOT NULL,
 PRIMARY KEY (`fk_usuario`),
 CONSTRAINT `fk_usuario`
-FOREIGN KEY (`fk_usuario`)
+FOREIGN KEY (`fk_usuario_usuario`)
 REFERENCES `sverga`.`usuario` (`idusuario`)
 ON DELETE CASCADE
 ON UPDATE CASCADE);
@@ -23,7 +23,7 @@ ON UPDATE CASCADE);
 CREATE TABLE `sverga`.`coordinador` (
 `fk_usuario` INT NOT NULL,
 PRIMARY KEY (`fk_usuario`),
-CONSTRAINT `fk_usuario`
+CONSTRAINT `fk_usuario_coordinador`
 FOREIGN KEY (`fk_usuario`)
 REFERENCES `sverga`.`usuario` (`idusuario`)
 ON DELETE CASCADE
@@ -32,7 +32,7 @@ ON UPDATE CASCADE);
 CREATE TABLE `sverga`.`administrador` (
 `fk_usuario` INT NOT NULL,
 PRIMARY KEY (`fk_usuario`),
-CONSTRAINT `fk_usuario`
+CONSTRAINT `fk_usuario_administrador`
 FOREIGN KEY (`fk_usuario`)
 REFERENCES `sverga`.`usuario` (`idusuario`)
 ON DELETE CASCADE
