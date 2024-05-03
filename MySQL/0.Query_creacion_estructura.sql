@@ -47,46 +47,47 @@ CREATE TABLE `sverga`.`reservas` (
 `num_alumnos` INT NULL,
 `civil_militar` TINYINT NULL,
 `ejercito` VARCHAR(20) NULL,
-PRIMARY KEY (`idreserva`),
-INDEX `fk_solicitante_idx` (`fk_solicitante` ASC) VISIBLE,
-INDEX `fk_autorizador_idx` (`fk_autorizador` ASC) VISIBLE,
-INDEX `fk_horario_tipo_idx` (`fk_horario_tipo` ASC) VISIBLE,
-INDEX `fk_horario_inicio_idx` (`fk_horario_inicio` ASC) VISIBLE,
-INDEX `fk_horario_fin_idx` (`fk_horario_fin` ASC) VISIBLE,
-INDEX `fk_aula_idx` (`fk_aula` ASC) VISIBLE,
-INDEX `fk_edificio_idx` (`fk_edificio` ASC) VISIBLE,
-CONSTRAINT `fk_solicitante`
-FOREIGN KEY (`fk_solicitante`)
-REFERENCES `sverga`.`usuarios` (`idusuario`)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION,
-CONSTRAINT `fk_autorizador`
-FOREIGN KEY (`fk_autorizador`)
-REFERENCES `sverga`.`usuarios` (`idusuario`)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION,
-CONSTRAINT `fk_horario_tipo`
-FOREIGN KEY (`fk_horario_tipo`)
-REFERENCES `sverga`.`horarios` (`tipo`)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION,
-CONSTRAINT `fk_horario_inicio`
-FOREIGN KEY (`fk_horario_inicio`)
-REFERENCES `sverga`.`horarios` (`inicio`)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION,
-CONSTRAINT `fk_horario_fin`
-FOREIGN KEY (`fk_horario_fin`)
-REFERENCES `sverga`.`horarios` (`fin`)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION,
-CONSTRAINT `fk_aula`
-FOREIGN KEY (`fk_aula`)
-REFERENCES `sverga`.`aulas` (`idaula`)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION,
-CONSTRAINT `fk_edificio`
-FOREIGN KEY (`fk_edificio`)
-REFERENCES `sverga`.`aulas` (`edificio`)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION);
+ PRIMARY KEY (`idreserva`),
+  INDEX `fk_solicitante_idx` (`fk_solicitante`),
+  INDEX `fk_autorizador_idx` (`fk_autorizador`),
+  INDEX `fk_horario_tipo_idx` (`fk_horario_tipo`),
+  INDEX `fk_horario_inicio_idx` (`fk_horario_inicio`),
+  INDEX `fk_horario_fin_idx` (`fk_horario_fin`),
+  INDEX `fk_aula_idx` (`fk_aula`),
+  INDEX `fk_edificio_idx` (`fk_edificio`),
+  CONSTRAINT `fk_solicitante`
+    FOREIGN KEY (`fk_solicitante`)
+    REFERENCES `sverga`.`usuarios` (`idusuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_autorizador`
+    FOREIGN KEY (`fk_autorizador`)
+    REFERENCES `sverga`.`usuarios` (`idusuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_horario_tipo`
+    FOREIGN KEY (`fk_horario_tipo`)
+    REFERENCES `sverga`.`horarios` (`tipo`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_horario_inicio`
+    FOREIGN KEY (`fk_horario_inicio`)
+    REFERENCES `sverga`.`horarios` (`inicio`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_horario_fin`
+    FOREIGN KEY (`fk_horario_fin`)
+    REFERENCES `sverga`.`horarios` (`fin`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_aula`
+    FOREIGN KEY (`fk_aula`)
+    REFERENCES `sverga`.`aulas` (`idaula`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_edificio`
+    FOREIGN KEY (`fk_edificio`)
+    REFERENCES `sverga`.`aulas` (`edificio`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+);
