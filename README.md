@@ -17,11 +17,11 @@
 ### Relacional DB
 | ENTIDAD | ATRIBUTOS |
 | --- | --- |
-| USUARIO | (**Id**, Nombre, Apellidos, Empleo, Mail, Teléfono) |
-| DOTACIÓN | (*FK_USUARIO*, Departamento) |
-| COORDINADOR | (*FK_USUARIO*) |
-| ADMINISTRADOR | (*FK_USUARIO*) |
-| RESERVAS | (**Id**, *FK_DOTACION*, *FK_COORDIANDOR*, *FK_HORARIO*, *FK_AULA*, NºAlumnos, Civil/Militar, Ejercito) |
+| usuario | (**idusuario**, nombre, apellido1, apellido2, empleo, mail, telefono) |
+| dotacion | (*fk_usuario*, departamento) |
+| coordinador | (*fk_usuario*) |
+| administrador | (*fk_usuario*) |
+| reservas | (**id**, *FK_DOTACION*, *FK_COORDIANDOR*, *FK_HORARIO*, *FK_AULA*, NºAlumnos, Civil/Militar, Ejercito) |
 | AULAS | (**Id**, Edificio, Nombre, Capacidad, Puestos, Modulo, Superficie, Equipamiento, ZAR, RAP, Red Ossorio, WAN-PG, Proyector, Pantalla inteligente, Extras) |
 | HORARIOS | (**Tipo**, NºHora, **Inicio**, **Fin**) |
 
