@@ -22,7 +22,7 @@
 | coordinador | (*fk_usuario*) |
 | administrador | (*fk_usuario*) |
 | reservas | (**id**, *FK_DOTACION*, *FK_COORDIANDOR*, *FK_HORARIO*, *FK_AULA*, NºAlumnos, Civil/Militar, Ejercito) |
-| AULAS | (**Id**, Edificio, Nombre, Capacidad, Puestos, Modulo, Superficie, Equipamiento, ZAR, RAP, Red Ossorio, WAN-PG, Proyector, Pantalla inteligente, Extras) |
-| HORARIOS | (**Tipo**, NºHora, **Inicio**, **Fin**) |
+| aulas | (**Id**, Edificio, Nombre, Capacidad, Puestos, Modulo, Superficie, Equipamiento, ZAR, RAP, Red Ossorio, WAN-PG, Proyector, Pantalla inteligente, Extras) |
+| horarios | (**Tipo**, NºHora, **Inicio**, **Fin**) |
 
 
