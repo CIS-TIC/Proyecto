@@ -1,5 +1,5 @@
 # Proyecto E2T
-![SVERGA](https://github.com/CIS-TIC/Proyecto/blob/main/image71559.png)
+![SVERGA](https://github.com/CIS-TIC/Proyecto/blob/main/pedrosverga.png)
 ## Tareas
 ### Arquitectura
 - [ ] Montar DB
