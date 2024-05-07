@@ -1,93 +1,77 @@
 // Creacion de tablas
 
-CREATE TABLE `sverga`.`usuarios` (
-`idusuario` INT NOT NULL AUTO_INCREMENT,
-`nombre` VARCHAR(20) NOT NULL,
-`apellido1` VARCHAR(20) NOT NULL,
-`apellido2` VARCHAR(20) NOT NULL,
-`empleo` VARCHAR(20) NOT NULL,
-`mail` VARCHAR(20) NULL,
-`telefono` INT NULL,
-`departamento` VARCHAR(20) NULL,
-`rol` VARCHAR(20) NOT NULL,
-PRIMARY KEY (`idusuario`));
+CREATE TABLE usuarios (
+	idusuario INT PRIMARY KEY,
+	nombre VARCHAR(20),
+	apellido1 VARCHAR(20),
+	apellido2 VARCHAR(20),
+	empleo VARCHAR(20),
+	mail VARCHAR(20),
+	telefono INT,
+	departamento VARCHAR(0),
+	prim_inicio BOOLEAN,
+	estado BOOLEAN,
+	contraseña VARCHAR(255)
+);
 
-CREATE TABLE `sverga`.`horarios` (
-`tipo` VARCHAR(20) NOT NULL,
-`inicio` TIME NOT NULL,
-`fin` TIME NOT NULL,
-`num_hora` INT NULL,
-PRIMARY KEY (`tipo`, `inicio`, `fin`));
+CREATE TABLE roles (
+	rol VARCHAR(20) PRIMARY KEY
+);
 
-CREATE TABLE `sverga`.`aulas` (
-`idaula` INT NOT NULL,
-`edificio` VARCHAR(20) NOT NULL,
-`nombre` VARCHAR(45) NULL,
-`capacidad` INT NULL,
-`puestos` INT NULL,
-`modulo` VARCHAR(20) NULL,
-`zar` TINYINT NULL,
-`rap` TINYINT NULL,
-`red_osorio` TINYINT NULL,
-`wan_pg` TINYINT NULL,
-`proyector` TINYINT NULL,
-`pizarra_digital` TINYINT NULL,
-`extras` VARCHAR(100) NULL,
-PRIMARY KEY (`idaula`, `edificio`));
+CREATE TABLE roles_usuarios (
+	idusuario INT,
+	rol VARCHAR(20),
+	FOREIGN KEY (idusuario) REFERENCES usuarios(idusuario),
+	FOREIGN KEY (rol) REFERENCES roles(rol),
+	PRIMARY KEY (idusuario, rol)
+);
 
-CREATE TABLE `sverga`.`reservas` (
-`idreserva` INT NOT NULL,
-`fk_solicitante` INT NULL,
-`fk_autorizador` INT NULL,
-`fk_horario_tipo` VARCHAR(20) NULL,
-`fk_horario_inicio` TIME NULL,
-`fk_horario_fin` TIME NULL,
-`fk_edificio` VARCHAR(20) NULL,
-`fk_aula` INT NULL,
-`num_alumnos` INT NULL,
-`civil_militar` TINYINT NULL,
-`ejercito` VARCHAR(20) NULL,
- PRIMARY KEY (`idreserva`),
-  INDEX `fk_solicitante_idx` (`fk_solicitante`),
-  INDEX `fk_autorizador_idx` (`fk_autorizador`),
-  INDEX `fk_horario_tipo_idx` (`fk_horario_tipo`),
-  INDEX `fk_horario_inicio_idx` (`fk_horario_inicio`),
-  INDEX `fk_horario_fin_idx` (`fk_horario_fin`),
-  INDEX `fk_aula_idx` (`fk_aula`),
-  INDEX `fk_edificio_idx` (`fk_edificio`),
-  CONSTRAINT `fk_solicitante`
-    FOREIGN KEY (`fk_solicitante`)
-    REFERENCES `sverga`.`usuarios` (`idusuario`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_autorizador`
-    FOREIGN KEY (`fk_autorizador`)
-    REFERENCES `sverga`.`usuarios` (`idusuario`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_horario_tipo`
-    FOREIGN KEY (`fk_horario_tipo`)
-    REFERENCES `sverga`.`horarios` (`tipo`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_horario_inicio`
-    FOREIGN KEY (`fk_horario_inicio`)
-    REFERENCES `sverga`.`horarios` (`inicio`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_horario_fin`
-    FOREIGN KEY (`fk_horario_fin`)
-    REFERENCES `sverga`.`horarios` (`fin`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_aula`
-    FOREIGN KEY (`fk_aula`)
-    REFERENCES `sverga`.`aulas` (`idaula`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_edificio`
-    FOREIGN KEY (`fk_edificio`)
-    REFERENCES `sverga`.`aulas` (`edificio`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION
+CREATE TABLE aulas (
+	idaula INT PRIMARY KEY,
+	edificio VARCHAR(20),
+	nombre VARCHAR(20),
+	capacidad INT,
+	puestos INT,
+	modulo VARCHAR(20),
+	zar BOOLEAN,
+	rap BOOLEAN,
+	red_ossorio BOOLEAN,
+	wan_pg BOOLEAN,
+	proyector BOOLEAN,
+	pizarra_digital BOOLEAN,
+	extras VARCHAR(255)
+);
+
+CREATE TABLE calendario (
+	tipo VARCHAR(20),
+	num_hora INT,
+	inicio DATETIME,
+	fin DATETIME,
+	PRIMARY KEY (tipo, num_hora),
+	INDEX (tipo),
+	INDEX (num_hora)
+);
+
+CREATE TABLE reservas (
+	idreserva INT PRIMARY KEY,
+	fk_solicitante INT,
+	fk_autorizador INT,
+	fk_aula INT,
+	num_alumnos INT,
+	civil_militar BOOLEAN,
+	ejercito VARCHAR(20),
+	FOREIGN KEY (fk_solicitante) REFERENCES usuarios(idusuario),
+	FOREIGN KEY (fk_autorizador) REFERENCES usuarios(idusuario),
+	FOREIGN KEY (fk_aula) REFERENCES aulas(idaula)
+);
+
+CREATE TABLE reservas_calendario (
+	fk_reserva INT,
+	fk_tipo_cal VARCHAR(20),
+	fk_num_hora_cal INT,
+	dia DATE,
+	FOREIGN KEY (fk_reserva) REFERENCES reservas(idreserva),
+	FOREIGN KEY (fk_tipo_cal) REFERENCES calendario(tipo),
+	FOREIGN KEY (fk_num_hora_cal) REFERENCES calendario(num_hora),
+	PRIMARY KEY (fk_reserva, fk_tipo_cal, fk_num_hora_cal, dia)
 );
