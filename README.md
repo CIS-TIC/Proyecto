@@ -19,10 +19,12 @@
 
 | ENTIDAD | ATRIBUTOS |
 | --- | --- |
-| usuarios | (**idusuario**, nombre, apellido1, apellido2, empleo, mail, telefono, departamento, rol, 1er_inicio, estado, contraseña) |
+| usuarios | (**idusuario**, nombre, apellido1, apellido2, empleo, mail, telefono, departamento, 1er_inicio, estado, contraseña) |
+| roles | (**rol**) |
+| roles_usuarios | (**idusuario**, **rol**) |
 | reservas | (**idreserva**, *fk_solicitante*, *fk_autorizador*, *fk_aula*, num_alumnos, civil_militar, ejercito) |
 | aulas | (**idaula**, edificio, nombre, capacidad, puestos, modulo, zar, rap, red_ossorio, wan_pg, proyector, pizarra_digital, extras) |
 | calendario | (**tipo**, **num_hora**, inicio, fin) |
-| reservas_calendario | (**fk_reserva**, **fk_tipo_cal**, **fk_num_cal**, dia) |
+| reservas_calendario | (**fk_reserva**, **fk_tipo_cal**, **fk_num_hora_cal**, dia) |
 
 
