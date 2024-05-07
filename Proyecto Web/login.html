@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head> 
+    <meta charset="UTF-8" />
+    <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:sec="https://www.thymeleaf.org/extras/spring-security" link href="CSS/bootstrap.css" rel="stylesheet">
+
+        <title> SVERGA. Formulario de Acceso </title>    
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="css/_main.css">
+        
+        <style type="text/css">
+            
+        </style>
+        
+
+        
+</head>
+    
+    <body>
+        
+        <div id="contenedor">
+            <div id="central">
+                <div id="login">
+                    <div class="titulo">
+                        Bienvenido a SVERGA
+                    </div>
+                    
+                    <form id="loginform">
+                        <input type="text" name="usuario" placeholder="Usuario" required>
+                        
+                        <input type="password" placeholder="Contraseña" name="password" required>
+                        
+                        <button type="submit" title="Ingresar" name="Ingresar">Login</button>
+                    </form>
+                    <div class="pie-form">
+                        <a href="#">¿Ha olvidado su contraseña?</a>
+                        <a href="#">¿No tiene Cuenta? Regístrese</a>
+                    </div>
+                </div>
+                
+                <div class="inferior">
+                    <a href="#">Enlace</a>
+                </div>
+            </div>
+        </div>
+            
+    </body>
+</html>

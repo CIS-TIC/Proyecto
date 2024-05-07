@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "UTF-8"/>
+        <title>SVERGA. Editar Usuario</title>
+        <link href = "CSS/_main.css" rel = "stylesheet" />
+        <link href = "CSS/bootstrap.css" rel = "stylesheet" />
+        <div class = "contenedor">
+          <br>
+          <div class="mb-3">
+          <img src = "pics/pedro-sverga.png"
+          alt = "SVERGA"
+          class = "centrado"
+          style="width:750px" >
+          </div>
+
+
+    </head>
+        <body class = "body1"
+        body style="background-color:#d8c26b;">
+          <br>
+          <br>
+         
+          <div class="container text-center">
+            <div class="row">
+              <div class="col">
+
+                <!--Botones columna de la izquierda-->
+                <button type="button" class="btn btn-primary">Editar Aulas</button>
+                <br>
+                <br>
+                <button type="button" class="btn btn-primary">Editar Horarios</button>
+                <br>
+                <br>
+                <button type="button" class="btn btn-primary">Primary</button>
+                <br>
+                <br>
+                <button type="button" class="btn btn-primary">Primary</button>
+                <br>
+                <br>
+                <button type="button" class="btn btn-primary">Primary</button>
+                <br>
+                <br>
+                <button type="button" class="btn btn-danger">Cerrar Sesión</button>
+              </div>
+              
+
+
+
+
+              
+              <div class="col">
+                <!--Id-->
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="inputGroup-sizing-default">Id.</span>
+                  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+
+                <!--Nombre-->
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="inputGroup-sizing-default">Nombre</span>
+                  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+
+                <!--Apellido 1-->
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="inputGroup-sizing-default">Apellido 1</span>
+                  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+
+                <!--Apellido 2-->
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="inputGroup-sizing-default">Apellido 2</span>
+                  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+
+                <!--Email-->
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
+                  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+
+                <!--Teléfono-->
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="inputGroup-sizing-default">Teléfono</span>
+                  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+
+                <!--Lista desplegable de empleos-->
+                <div class="input-group mb-3">
+                  <label class="input-group-text" for="inputGroupSelect01">Empleo</label>
+                  <select class="form-select" id="inputGroupSelect01">
+                    <option selected></option>
+                    <option value="1">Civil</option>
+                    <option value="1">Marinero</option>
+                    <option value="2">Cabo</option>
+                    <option value="3">Cabo Primero</option>
+                    <option value="3">Cabo Mayor</option>
+                    <option value="4">Sargento</option>
+                    <option value="5">Sargento Primero</option>
+                    <option value="6">Brigada</option>
+                    <option value="7">Subteniente</option>
+                    <option value="8">Suboficial Mayor</option>
+                    <option value="3">Alférez de Navío</option>
+                    <option value="3">Teniente de Navío</option>
+                    <option value="4">Capitán de Corbeta</option>
+                    <option value="5">Capitán de Fragata</option>
+                    <option value="6">Capitán de Navío</option>
+                  </select>
+                </div>
+                
+                  <!--Lista desplegable de roles-->
+                  <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupSelect01">Rol</label>
+                    <select class="form-select" id="inputGroupSelect01">
+                      <option selected></option>
+                      <option value="1">Usuario</option>
+                      <option value="2">Coordinador</option>
+                      <option value="3">Administrador</option>
+                    </select>
+                </div>
+
+                <!--Departamento        HAY QUE MIRAR QUE SÓLO SE HABILITE ESTA CASILLA CUANDO SE SELECCIONA EL ROL DE PROFESOR-->
+                <div class="input-group mb-3">
+                  <label class="input-group-text" for="inputGroupSelect01">Departamento</label>
+                  <select class="form-select" id="inputGroupSelect01">
+                    <option selected></option>
+                    <option value="1">Dpto. 1</option>
+                    <option value="2">Dpto. 2</option>
+                    <option value="3">Dpto. 3</option>
+                  </select>
+              </div>
+
+
+
+
+                  <!--Contraseña-->
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Contraseña</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  </div>
+                  <!--Check Contraseña-->
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                    <label class="form-check-label" for="flexSwitchCheckChecked">El usuario deberá cambiar la contraseña tras el primer acceso</label>
+                  </div>
+                  <br>
+
+                  <!--Guardar datos en la BD-->
+                  <button type="button" class="btn btn-primary">Buscar</button>
+
+                  <!--Guardar cambios-->
+                  <button type="button" class="btn btn-primary">Guardar cambios</button>
+                  <!--Eliminar usuario-->
+                  <button type="button" class="btn btn-danger">Eliminar usuario</button>
+
+              </div>
+
+            <!--TERCERA COLUMNA-->
+
+              <div class="col">
+                
+
+
+              </div>
+     </div>       
+           
+     
+
+
+
+          <!--CREO QUE ESTE BOTÓN HABRÍA QUE DESHABILITARLO-->  
+          <!--INTRODUCIR A CONTINUACIÓN EL ENLACE PARA MOSTRAR DATOS DE CONTACTO DEL POC-->
+            <br>
+            <a class="btn btn-primary" href = "quejas.html">Contacto</a>
+            
+          </div>     
+        </body>
+</html>

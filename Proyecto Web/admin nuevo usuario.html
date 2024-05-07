@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>SVERGA. Nuevo Usuario</title>
+  <link href="CSS/_main.css" rel="stylesheet" />
+  <link href="CSS/bootstrap.css" rel="stylesheet" />
+  <div class="contenedor">
+    <br>
+    <div class="mb-3">
+      <img src="pics/pedrosverga.png" alt="SVERGA" class="centrado" style="width:750px" figure>
+    </div>
+</head>
+
+
+
+<body class="body1" body style="background-color:#d8c26b;">
+  <br>
+  <br>
+
+
+  <div class="container text-center">
+    <div class="row">
+
+
+
+
+<!--COLUMNA DE LA IZQUIERDA-->
+      <div class="col">
+
+        <!-- La línea a continuación establece el borde-->
+        <div class="recuadro_admin_izquierda">
+
+
+
+          <!--Botones columna de la izquierda-->
+          <button type="button" class="btn btn-primary">Editar Aulas</button>
+          <br>
+          <br>
+          <button type="button" class="btn btn-primary">Editar Horarios</button>
+          <br>
+          <br>
+          <button type="button" class="btn btn-primary">Primary</button>
+          <br>
+          <br>
+          <button type="button" class="btn btn-primary">Primary</button>
+          <br>
+          <br>
+          <button type="button" class="btn btn-primary">Primary</button>
+          <br>
+          <br>
+
+          <!--Ventana emergente para cierre de sesión-->
+          <button type="button" class="btn btn-danger" onclick="window.modal.showModal();">Cerrar Sesión</button>
+
+          <dialog id="modal">
+            <h2>¿Está seguro de que desea cerrar la sesión?</h2>
+            <p>NOTA: Dejar este texto aquí por si hubiera que añadir algo después</p>
+            <button type="button" class="btn btn-primary" onclick="window.modal.close();">No, mantener la sesión
+              abierta</button>
+            <button type="button" class="btn btn-danger">Sí, Cerrar Sesión</button>
+          </dialog>
+
+        </div>
+      </div>
+
+
+
+      <!--COLUMNA CENTRAL-->
+      <div class="col">
+
+        <div class="recuadro_admin_central">
+          <!--Id ESTA CLASE ES DIFERENTE PORQUE LA ID A MOSTRAR DEBERÍA OBTENERSE DE LA BASE DE DATOS AL SER AUTOINCREMENTABLE-->
+          <div class="input-group flex-nowrap">
+            <input class="form-control" type="text" value="Id." aria-label="Id." disabled readonly>
+          </div>
+          <br>
+
+
+          <!--Nombre-->
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Nombre</label>
+          </div>
+          <br>
+
+
+          <!--Apellido 1-->
+          <div class="form-floating mb-3" padding=25px>
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Apellido 1</label>
+          </div>
+          <br>
+
+          <!--Apellido 2-->
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Apellido 2</label>
+          </div>
+          <br>
+
+          <!--Email-->
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Email</label>
+          </div>
+          <br>
+
+          <!--Teléfono-->
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Teléfono</label>
+          </div>
+          <br>
+
+          <!--Lista desplegable de empleos-->
+          <div class="form-floating">
+            <select class="form-select" id="floatingSelectDisabled" aria-label="Floating label disabled select example"
+              enabled>
+              <option selected></option>
+              <option value="1">Civil</option>
+              <option value="1">Marinero</option>
+              <option value="2">Cabo</option>
+              <option value="3">Cabo Primero</option>
+              <option value="3">Cabo Mayor</option>
+              <option value="4">Sargento</option>
+              <option value="5">Sargento Primero</option>
+              <option value="6">Brigada</option>
+              <option value="7">Subteniente</option>
+              <option value="8">Suboficial Mayor</option>
+              <option value="3">Alférez de Navío</option>
+              <option value="3">Teniente de Navío</option>
+              <option value="4">Capitán de Corbeta</option>
+              <option value="5">Capitán de Fragata</option>
+              <option value="6">Capitán de Navío</option>
+            </select>
+            <label for="floatingSelectDisabled">Empleo</label>
+          </div>
+          <br>
+
+
+
+          <!--Lista desplegable de roles-->
+          <div class="form-floating">
+            <select class="form-select" id="floatingSelectDisabled" aria-label="Floating label disabled select example"
+              enabled>
+              <option selected></option>
+              <option value="1">Profesor</option>
+              <option value="1">Coordinador</option>
+              <option value="2">Administrador</option>
+            </select>
+            <label for="floatingSelectDisabled">Rol</label>
+          </div>
+          <br>
+
+
+          <!--Departamento        HAY QUE MIRAR QUE SÓLO SE HABILITE ESTA CASILLA CUANDO SE SELECCIONA EL ROL DE PROFESOR-->
+          <div class="form-floating">
+            <select class="form-select" id="floatingSelectDisabled" aria-label="Floating label disabled select example"
+              enabled>
+              <option selected></option>
+              <option value="1">Dpto. 1</option>
+              <option value="1">Dpto. 2</option>
+              <option value="2">Dpto. 3</option>
+            </select>
+            <label for="floatingSelectDisabled">Departamento</label>
+          </div>
+          <br>
+
+          <!--Contraseña-->
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Contraseña</label>
+          </div>
+          <br>
+          <!--Check Contraseña-->
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+            <label class="form-check-label" for="flexSwitchCheckChecked">El usuario deberá cambiar la contraseña tras el
+              primer acceso</label>
+          </div>
+          <br>
+
+          <!--Guardar datos en la BD-->
+          <button type="button" class="btn btn-primary">Dar de alta</button>
+          <!--Borrar formulario-->
+          <button type="button" class="btn btn-primary">Borrar datos</button>
+          <br>
+
+        </div>
+      </div>
+      <br>
+      <br>
+
+      <!--COLUMNA DE LA DERECHA-->
+      <div class="col">
+
+      </div>
+
+
+
+</body>
+
+</html>

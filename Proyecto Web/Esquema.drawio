@@ -1,0 +1,68 @@
+<mxfile host="app.diagrams.net" modified="2024-05-05T15:19:43.482Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="fV82IKnS1QsOntuOQQ2J" version="22.1.21" type="device">
+  <diagram name="Página-1" id="oqbhztMOlpwiy6Q2NHOT">
+    <mxGraphModel dx="869" dy="468" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="msNUTTGtAZQhJTJ6rFaG-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="msNUTTGtAZQhJTJ6rFaG-1" target="msNUTTGtAZQhJTJ6rFaG-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="msNUTTGtAZQhJTJ6rFaG-1" value="Ventana Login" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="350" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="msNUTTGtAZQhJTJ6rFaG-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="msNUTTGtAZQhJTJ6rFaG-2" target="msNUTTGtAZQhJTJ6rFaG-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="200" y="150" />
+              <mxPoint x="200" y="610" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msNUTTGtAZQhJTJ6rFaG-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="msNUTTGtAZQhJTJ6rFaG-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="400" y="150.0714285714286" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msNUTTGtAZQhJTJ6rFaG-2" value="Administrador" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="msNUTTGtAZQhJTJ6rFaG-3" value="Coordinador" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="350" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="msNUTTGtAZQhJTJ6rFaG-4" value="Usuario" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="580" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="msNUTTGtAZQhJTJ6rFaG-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="msNUTTGtAZQhJTJ6rFaG-9" target="msNUTTGtAZQhJTJ6rFaG-18">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="400" y="100" />
+              <mxPoint x="400" y="200" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msNUTTGtAZQhJTJ6rFaG-9" value="Nuevo Usuario" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="87.5" width="120" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="msNUTTGtAZQhJTJ6rFaG-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;startArrow=classic;startFill=1;endArrow=none;endFill=0;" edge="1" parent="1" source="msNUTTGtAZQhJTJ6rFaG-16">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="400" y="132.92857142857144" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msNUTTGtAZQhJTJ6rFaG-16" value="Nueva Aula" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="120.5" width="120" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="msNUTTGtAZQhJTJ6rFaG-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;startArrow=classic;startFill=1;endArrow=none;endFill=0;" edge="1" parent="1" source="msNUTTGtAZQhJTJ6rFaG-17">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="400" y="166.8571428571429" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msNUTTGtAZQhJTJ6rFaG-17" value="Editar Usuario" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="154.5" width="120" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="msNUTTGtAZQhJTJ6rFaG-18" value="Editar Aula" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="187.5" width="120" height="25" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
