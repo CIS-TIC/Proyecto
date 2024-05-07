@@ -1,0 +1,3 @@
+# Nada qeue ver aquí...
+
+# Carpeta con imágenes y recursos genéricos que no forman parte del proyecto en si
