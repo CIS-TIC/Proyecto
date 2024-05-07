@@ -1,5 +1,5 @@
 # Proyecto E2T
-![SVERGA](https://github.com/CIS-TIC/Proyecto/blob/main/pedrosverga.png)
+![SVERGA](https://github.com/CIS-TIC/Proyecto/blob/main/Recursos/pedrosverga.png)
 ## Tareas
 ### Arquitectura
 - [ ] Montar DB
@@ -14,7 +14,9 @@
 >+ USUARIOS: Cambiar/anular solicitud aprobada?
 ## Documentación
 :link:[Enlace carpeta de contenidos](https://minisdefear-my.sharepoint.com/:f:/g/personal/escanoasaugue_minisdefear_onmicrosoft_com/EtAFxpsyZkxMo7nGqYn215gBakcX1UwHNWfo752WsTBJoQ?e=5LR0RJ)
-### Relacional DB
+### Base de Datos
+![Esquema DB](https://github.com/CIS-TIC/Proyecto/blob/main/Recursos/E-R%20SVERGA.png)
+
 | ENTIDAD | ATRIBUTOS |
 | --- | --- |
 | usuarios | (**idusuario**, nombre, apellido1, apellido2, empleo, mail, telefono, departamento, rol) |
