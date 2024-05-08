@@ -8,7 +8,7 @@ CREATE TABLE usuarios (
 	empleo VARCHAR(20),
 	mail VARCHAR(20),
 	telefono INT,
-	departamento VARCHAR(0),
+	departamento VARCHAR(20),
 	prim_inicio BOOLEAN,
 	estado BOOLEAN,
 	contraseña VARCHAR(255)
@@ -29,7 +29,7 @@ CREATE TABLE roles_usuarios (
 CREATE TABLE aulas (
 	idaula INT PRIMARY KEY,
 	edificio VARCHAR(20),
-	nombre VARCHAR(20),
+	nombre VARCHAR(45),
 	capacidad INT,
 	puestos INT,
 	modulo VARCHAR(20),
