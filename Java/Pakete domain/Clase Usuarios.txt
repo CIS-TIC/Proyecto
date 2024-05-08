@@ -16,12 +16,15 @@ public class Usuarios /*implements Serializable */{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id_Usuario;
-    private String Nombre;
-    private String Apellidos;
-    private String Empleo;
-    private String Email;
-    private String Departamento;
-    private String Telefono;
-    private String Rol;
+    private Long idusuario;
+    private String nombre;
+    private String apellido1;
+    private String apellido2;
+    private String empleo;
+    private String mail;
+    private int telefono;
+    private String departamento;
+    private int prim_inicio;
+    private int estado;
+    private String contraseña;
 }
