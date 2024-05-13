@@ -2,9 +2,9 @@
 ![SVERGA](https://github.com/CIS-TIC/Proyecto/blob/main/Recursos/pedrosverga.png)
 ## Tareas
 ### Arquitectura
-- [ ] Montar DB
+- [X] Montar DB
 - [X] Pasar esquema relacional a la DB
-- [X] Preparar contenedores (Apache, MySQL y NGINX)
+- [ ] Preparar contenedores (Apache, MySQL y NGINX)
 ### Aplicación
 - [ ] Diseño nuevas pantallas
 - [ ] Preparación de Bootstrap
