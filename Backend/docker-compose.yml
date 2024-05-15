@@ -1,0 +1,6 @@
+services:
+  openjdk:
+    image: openjdk/personal
+    build: ./openjdk
+    ports:
+      - "8080:8080"
