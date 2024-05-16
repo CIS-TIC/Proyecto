@@ -27,6 +27,7 @@
 | calendario | (**tipo**, **num_hora**, inicio, fin) |
 | reservas_calendario | (**fk_reserva**, **fk_tipo_cal**, **fk_num_hora_cal**, dia) |
 
-![Diseño final DB](https://github.com/CIS-TIC/Proyecto/blob/main/Recursos/Relacional%20SVERGA.PNG)
+
+![Diseño final DB](https://github.com/CIS-TIC/Proyecto/blob/main/Recursos/RELACIONAL%20SVERGA%205.0.png)
 
 
