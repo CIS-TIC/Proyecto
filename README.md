@@ -13,7 +13,7 @@
 >[!TIP]
 >+ USUARIOS: Cambiar/anular solicitud aprobada?
 ## Documentación
-:link:[Enlace carpeta de contenidos](https://minisdefear-my.sharepoint.com/:f:/g/personal/escanoasaugue_minisdefear_onmicrosoft_com/EtAFxpsyZkxMo7nGqYn215gBakcX1UwHNWfo752WsTBJoQ?e=5LR0RJ)
+:link:[Enlace carpeta de contenidos](https://1drv.ms/f/s!Aixurhs-zJm9bmkndDmPo6mAk1Q?e=WchtPc)
 ### Base de Datos
 ![Esquema DB](https://github.com/CIS-TIC/Proyecto/blob/main/Recursos/E-R%20SVERGA.png)
 
