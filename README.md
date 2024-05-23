@@ -3,12 +3,11 @@
 ## Tareas
 ### Arquitectura
 - [X] Montar DB
-- [X] Pasar esquema relacional a la DB
 - [ ] Preparar contenedores (Apache, MySQL y NGINX)
 ### Aplicación
-- [ ] Diseño nuevas pantallas
-- [ ] Preparación de Bootstrap
-- [ ] Realizar plantillas HTML+CSS
+- [ ] Diseño vista "Coordinador"
+- [ ] Reset contraseña
+- [ ] Conexión tabla Reservas
 
 >[!TIP]
 >+ USUARIOS: Cambiar/anular solicitud aprobada?
