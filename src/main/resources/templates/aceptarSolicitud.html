@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Aceptar Solicitud SVERGA.</title>
+        <link rel="stylesheet" type="text/css" href="static/css/_main.css" th:href="@{/css/_main.css}" />
+        <link rel="stylesheet" type="text/css" href="static/css/bootstrap.css" th:href="@{/css/bootstrap.css}" />
+    </head>
+
+    <body class="body1" style="background-color:#FFF2CC; padding-bottom: 220px;">
+        <header th:replace="layout/plantillas::header" />
+        <br />
+        <nav th:replace="layout/plantillas::nav"/>
+        <br/>
+
+        <div class="container text-center">
+            <div class="recuadro_admin_central" style="width: 50%; margin: auto;">
+                <!-- Título del formulario -->
+                <h1>Asignar Rol a Usuario</h1>
+                <br/>
+
+                <form th:action="@{/aceptarSolicitud/} + ${usuario.idusuario}" method="post" th:object="${usuario}">
+
+                    <!-- Casillas de roles -->
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="rolPendiente" name="roles"
+                                       value="ROLE_PENDIENTE" th:checked="${rolesDeUsuario.contains('ROLE_PENDIENTE')}"/>
+                                <label class="form-check-label" for="rolPendiente">Pendiente</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="rolAdministrador" name="roles"
+                                       value="ROLE_ADMINISTRADOR" th:checked="${rolesDeUsuario.contains('ROLE_ADMINISTRADOR')}"/>
+                                <label class="form-check-label" for="rolAdministrador">Administrador</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="rolCoordinador" name="roles"
+                                       value="ROLE_COORDINADOR" th:checked="${rolesDeUsuario.contains('ROLE_COORDINADOR')}"/>
+                                <label class="form-check-label" for="rolCoordinador">Coordinador</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="rolUser" name="roles" 
+                                       value="ROLE_USER" th:checked="${rolesDeUsuario.contains('ROLE_USER')}" />
+                                <label class="form-check-label" for="rolUser">Usuario / Profesor</label>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+
+                    <!-- Lista desplegable de empleos -->
+                    <div class="form-floating mb-3">
+                        <select class="form-select" id="floatingSelectDisabled" th:field="*{empleo}">
+                            <option value="" selected=""></option>
+                            <option value="Civil">Civil</option>
+                            <option value="Capitán de Navío">Capitán de Navío</option>
+                            <option value="Capitán de Fragata">Capitán de Fragata</option>
+                            <option value="Capitán de Corbeta">Capitán de Corbeta</option>
+                            <option value="Teniente de Navío">Teniente de Navío</option>
+                            <option value="Alférez de Navío">Alférez de Navío</option>
+                            <option value="Suboficial Mayor">Suboficial Mayor</option>
+                            <option value="Subteniente">Subteniente</option>
+                            <option value="Brigada">Brigada</option>
+                            <option value="Sargento Primero">Sargento Primero</option>
+                            <option value="Sargento">Sargento</option>
+                            <option value="Cabo Mayor">Cabo Mayor</option>
+                            <option value="Cabo Primero">Cabo Primero</option>
+                            <option value="Cabo">Cabo</option>
+                            <option value="Marinero">Marinero</option>
+                        </select>
+                        <label for="floatingSelectDisabled">Empleo</label>
+                    </div>
+
+                    <!--Nombre-->
+                    <div class="form-floating mb-3">
+                        <input id="nombre" type="text" class="form-control" th:field="*{nombre}" required="" autofocus="autofocus"/>
+                        <label for="nombre">Nombre</label>
+                    </div>
+
+                    <!--Apellido 1-->
+                    <div class="form-floating mb-3">
+                        <input id="apellido1" type="text" class="form-control" th:field="*{apellido1}" required=""/>
+                        <label for="apellido1">Primer Apellido</label>
+                    </div>
+
+                    <!--Apellido 2-->
+                    <div class="form-floating mb-3">
+                        <input id="apellido2" type="text" class="form-control" th:field="*{apellido2}" required=""/>
+                        <label for="apellido2">Segundo Apellido</label>
+                    </div>
+
+                    <!--Teléfono-->
+                    <div class="form-floating mb-3">
+                        <input id="telefono" type="text" class="form-control" th:field="*{telefono}" required=""/>
+                        <label for="telefono">Teléfono</label>
+                    </div>
+
+                    <!--Departamento-->
+                    <div class="form-floating mb-3">
+                        <input id="departamento" type="text" class="form-control" th:field="*{departamento}"/>
+                        <label for="departamento">Departamento</label>
+                    </div>
+
+                    <!--Email, No se muestra, para que no sea modificada-->
+                    <input id="email" type="hidden" class="form-control" th:field="*{mail}"/>
+                    <!--Password No se muestra, para que no sea modificada-->
+                    <input id="exampleInputPassword1" type="hidden" class="form-control" th:field="*{clave}" />
+
+                    <!--Guardar datos en la BD-->
+                    <button type="submit" class="btn btn-success" id="submitbutton">Aceptar Solicitud</button>
+
+                    <!--Regresa a la pagina de listado de usuarios-->
+                    <a class="btn btn-danger" th:href="@{/solicitudesPendientes}">Cancelar</a>
+                </form>
+                <br/>
+            </div>
+        </div>
+        <br/>
+        <footer th:replace="layout/plantillas::footer" />
+
+        <!--El siguiente script activa o desactiva los check boxes en función de lo que se seleccione-->
+        <script>
+            // Obteniendo las referencias
+            const pendienteCheckbox = document.getElementById('rolPendiente');
+            const grupo2Checkboxes = [
+            document.getElementById('rolAdministrador'),
+            document.getElementById('rolCoordinador'),
+            document.getElementById('rolUser')
+            ];
+
+            // Añadiendo un escuchador de eventos al checkbox "Pendiente"
+            pendienteCheckbox.addEventListener('change', function () {
+            if (pendienteCheckbox.checked) {
+            // Si "Pendiente" está marcado, los otros 3 se desmarcan
+            grupo2Checkboxes.forEach(checkbox => {
+            checkbox.checked = false;
+            });
+            } else if (!pendienteCheckbox.checked && grupo2Checkboxes.every(cb => !cb.checked)) {
+            // Si "Pendiente" no está marcado y todos del grupo 2 están desmarcados, se marca "Profesor"
+            grupo2Checkboxes[2].checked = true;
+            }
+            });
+
+            // Añadiendo un escuchador de eventos a los otros 3 checkboxes
+            grupo2Checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function () {
+            if (checkbox.checked) {
+            // Si alguno del grupo 2 está marcado, "Pendiente" se desmarca
+            pendienteCheckbox.checked = false;
+            } else if (grupo2Checkboxes.every(cb => !cb.checked)) {
+            // Si todos del grupo 2 están desmarcados, "Pendiente" se marca
+            pendienteCheckbox.checked = true;
+            }
+            });
+            });
+        </script>
+
+        <!--El siguiente script sólo permite introducir letras en el campo NOMBRE y limita la longitud a 20-->
+        <script>
+            var nombreInput = document.getElementById("nombre");
+            nombreInput.addEventListener("input", function () {
+            nombreInput.value = nombreInput.value.replace(/[0-9]/g, "").substring(0, 20);
+            });
+        </script>
+
+        <!--El siguiente script sólo permite introducir letras en el campo APELLIDO 1 y limita la longitud a 20-->
+        <script>
+            var apellido1Input = document.getElementById("apellido1");
+            apellido1Input.addEventListener("input", function () {
+            apellido1Input.value = apellido1Input.value.replace(/[0-9]/g, "").substring(0, 20);
+            });
+        </script>
+
+        <!--El siguiente script sólo permite introducir letras en el campo APELLIDO 2 y limita la longitud a 20-->
+        <script>
+            var apellido2Input = document.getElementById("apellido2");
+            apellido2Input.addEventListener("input", function () {
+            apellido2Input.value = apellido2Input.value.replace(/[0-9]/g, "").substring(0, 20);
+            });
+        </script>
+
+        <!--El siguiente script sólo permite introducir números en el campo TELÉFONO y limita la longitud a 10-->
+        <script>
+            var telefonoInput = document.getElementById("telefono");
+            telefonoInput.addEventListener("input", function () {
+            telefonoInput.value = telefonoInput.value.replace(/\D/g, "").substring(0, 10);
+            });
+        </script>
+
+        <!--El siguiente script limita la longitud del campo EMAIL a 45-->
+        <script>
+            var emailInput = document.getElementById("email");
+            emailInput.addEventListener("input", function () {
+            emailInput.value = emailInput.value.substring(0, 45);
+            });
+        </script>
+
+        <!--El siguiente script limita la longitud del campo DEPARTAMENTO a 20-->
+        <script>
+            var departamentoInput = document.getElementById("departamento");
+            departamentoInput.addEventListener("input", function () {
+            departamentoInput.value = departamentoInput.value.substring(0, 20);
+            });
+        </script>
+
+    </body>
+</html>

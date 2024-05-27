@@ -1,0 +1,388 @@
+html {
+    min-height: 100%;
+    position:relative;
+}
+
+body {
+    font-family: 'Overpass', sans-serif;
+    font-weight: normal;
+    font-size: 100%;
+    color: #1b262c;
+
+    margin: 0;
+    background-color: #0f4c75;
+}
+
+#contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aquamarine;
+    margin: 0;
+    padding: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    width: 100%;
+    height: 100%;
+}
+
+#central {
+    max-width: 320px;
+    width: 100%;
+}
+
+.titulo {
+    font-size: 250%;
+    color: #bbe1fa;
+    text-align: center;
+    margin-bottom: 20px;
+}
+/*PANTALLA DE BUSQUEDA*/
+.recuadro_derecha_busqueda{
+	margin-bottom: 30px;
+	line-height: 4.3;
+	float: left;
+
+}
+.recuadro_central_busqueda{
+	border: 3px solid black;
+    background-color: #DED3B1;
+	float:none;
+	width: 100%;
+    padding: 25px;
+}
+.recuadro_final_busqueda{
+	float:right
+}
+
+/*Recuadros amarillos para la vista de ADMINISTRADOR*/
+.recuadro_admin_izquierda {
+    border: 3px solid black;
+    background-color: #DED3B1;
+    float: left;
+    width: 75%;
+    padding: 25px;
+}
+
+.recuadro_admin_central {
+    border: 3px solid black;
+    background-color: #DED3B1;
+   
+    width: 100%;
+    padding: 25px;
+}
+
+/*Recuadro azul para la vista de LOGIN*/
+.recuadro_login {
+    border: 3px solid black;
+    background-color: #C4D1E3;
+    ;
+    float: left;
+    width: 100%;
+    padding: 25px;
+}
+
+/*Recuadro verde para la vista de USUARIO*/
+.recuadro_usuario_izquierda {
+    border: 3px solid black;
+    background-color: #199c86;
+    ;
+    float: left;
+    width: 60%;
+    padding: 25px;
+}
+
+.square {
+    height: 200px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.border {
+    margin-left: 300px;
+    border-left: 6px solid #3793EE;
+}
+
+div.JShover {
+    width: 100%;
+    height: 50%;
+    padding-left: -10px;
+    text-align: center;
+}
+
+.wrap {
+    width: 100%;
+}
+
+.floatleft {
+    float: left;
+    width: 50%;
+    height: 400px;
+
+}
+
+.floatright {
+    float: right;
+    height: 400px;
+    width: 50%;
+}
+
+
+/*repetir contraseña parpadeo*/
+@keyframes blink {
+	0% {border-color: red;}
+	50% {border-color: transparent;}
+	100% {border-color: red;}
+	}
+
+	.highlight {
+		border: 15px solid red;
+		animation: blink 1s linear infinite;
+	}
+/*ESTILOS PARA EL HEADER Y EL FOOTER*/
+
+/*El header-frame se usa para las franjas azules del header y del footer*/
+.header-frame {
+	width: 100%;
+	background-color: #04133A;
+	height: 100%;
+  }
+
+  .header-frame .row .col-4 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+
+  .header-frame .col-4:nth-child(2) img {
+	min-width: 225px;
+  }
+
+
+/*----------------------------El siguiente código CSS es para el calendario*---------------------------/
+
+
+/* General styling for the entire page */
+body {
+	font-family: Arial, sans-serif;
+	background-color: white;
+	margin: 0;
+}
+
+.wrapper {
+	max-width: 1100px;
+	margin: 15px auto;
+}
+
+/* Calendar container */
+.container-calendar {
+	background: #ffffff;
+	padding: 15px;
+	max-width: 900px;
+	margin: 0 auto;
+	overflow: auto;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	display: flex;
+	justify-content: space-between;
+}
+
+/* Event section styling */
+#event-section {
+	padding: 10px;
+	background: #f5f5f5;
+	margin: 20px 0;
+	border: 1px solid #ccc;
+}
+
+.container-calendar #left h1 {
+	color: green;
+	text-align: center;
+	background-color: #f2f2f2;
+	margin: 0;
+	padding: 10px 0;
+}
+
+#event-section h3 {
+	color: green;
+	font-size: 18px;
+	margin: 0;
+}
+
+#event-section input[type="date"],
+#event-section input[type="text"] {
+	margin: 10px 0;
+	padding: 5px;
+	width: 80%;
+}
+
+#event-section button {
+	background: green;
+	color: white;
+	border: none;
+	padding: 5px 10px;
+	cursor: pointer;
+}
+
+.event-marker {
+	position: relative;
+}
+
+.event-marker::after {
+	content: '';
+	display: block;
+	width: 6px;
+	height: 6px;
+	background-color: red;
+	border-radius: 50%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+/* event tooltip styling */
+.event-tooltip {
+	position: absolute;
+	background-color: rgba(234, 232, 232, 0.763);
+	color: black;
+	padding: 10px;
+	border-radius: 4px;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: none;
+	transition: all 0.3s;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+.event-marker:hover .event-tooltip {
+	display: block;
+}
+
+/* Reminder section styling */
+#reminder-section {
+	padding: 10px;
+	background: #f5f5f5;
+	margin: 20px 0;
+	border: 1px solid #ccc;
+}
+
+#reminder-section h3 {
+	color: green;
+	font-size: 18px;
+	margin: 0;
+}
+
+#reminderList {
+	list-style: none;
+	padding: 0;
+}
+
+#reminderList li {
+	margin: 5px 0;
+	font-size: 16px;
+}
+
+/* Style for the delete buttons */
+.delete-event {
+	background: rgb(237, 19, 19);
+	color: white;
+	border: none;
+	padding: 5px 10px;
+	cursor: pointer;
+	margin-left: 10px;
+	align-items: right;
+}
+
+/* Buttons in the calendar */
+.button-container-calendar button {
+	cursor: pointer;
+	background: green;
+	color: #fff;
+	border: 1px solid green;
+	border-radius: 4px;
+	padding: 5px 10px;
+}
+
+/* Calendar table */
+.table-calendar {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.table-calendar td,
+.table-calendar th {
+	padding: 5px;
+	border: 1px solid #e2e2e2;
+	text-align: center;
+	vertical-align: top;
+}
+
+/* Date picker */
+.date-picker.selected {
+	background-color: #f2f2f2;
+	font-weight: bold;
+	outline: 1px dashed #00BCD4;
+}
+
+.date-picker.selected span {
+	border-bottom: 2px solid currentColor;
+}
+
+/* Day-specific styling */
+.date-picker:nth-child(1) {
+	color: red;
+	/* Sunday */
+}
+
+.date-picker:nth-child(6) {
+	color: green;
+	/* Friday */
+}
+
+/* Hover effect for date cells */
+.date-picker:hover {
+	background-color: green;
+	color: white;
+	cursor: pointer;
+}
+
+/* Header for month and year */
+#monthAndYear {
+	text-align: center;
+	margin-top: 0;
+}
+
+/* Navigation buttons */
+.button-container-calendar {
+	position: relative;
+	margin-bottom: 1em;
+	overflow: hidden;
+	clear: both;
+}
+
+#previous {
+	float: left;
+}
+
+#next {
+	float: right;
+}
+
+/* Footer styling */
+.footer-container-calendar {
+	margin-top: 1em;
+	border-top: 1px solid #dadada;
+	padding: 10px 0;
+}
+
+.footer-container-calendar select {
+	cursor: pointer;
+	background: #ffffff;
+	color: #585858;
+	border: 1px solid #bfc5c5;
+	border-radius: 3px;
+	padding: 5px 1em;
+}

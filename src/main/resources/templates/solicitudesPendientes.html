@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <meta charset="utf-8"/>
+        <title>Solicitudes Pendientes SVERGA</title>
+        <link rel="stylesheet" type="text/css" href="static/css/_main.css" th:href="@{/css/_main.css}"/>
+        <link rel="stylesheet" type="text/css" href="static/css/bootstrap.css" th:href="@{/css/bootstrap.css}"/>
+    </head>
+    <body style="background-color:#FFF2CC; padding-bottom: 220px;">
+        <header th:replace="layout/plantillas::header"/>
+        <br/>
+        <nav th:replace="layout/plantillas::nav"/>
+        <br/>
+
+        <div class="container">
+
+            <!-- Mensaje de confirmacion al asignar un rol a un usuario -->
+            <div th:if=${param.exito}>
+                <div class="alert alert-success">Se ha aceptado la solicitud y asignado un Rol al usuario.</div>
+            </div>
+            <!-- Mensaje de confirmacion al eliminar un usuario -->
+            <div th:if=${param.solicitudEliminada}>
+                <div class="alert alert-danger">Se ha eliminado la solicitud de alta del usuario.</div>
+            </div>
+            <!-- Mensaje de confirmacion al eliminar un usuario -->
+            <div th:if=${param.error}>
+                <div class="alert alert-info">Se ha producido un error.</div>
+            </div>
+
+            <h1>Solicitudes Pendientes de Usuarios.</h1>
+            <br/>
+            <div th:if="${listaUsuarios != null and !listaUsuarios.empty}">
+                <table class="table table-striped table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Empleo</th>
+                            <th>Nombre</th>
+                            <th>1º Apellido</th>
+                            <th>2º Apellido</th>
+                            <th>Email</th>
+                            <th>Departamento</th>
+                            <th sec:authorize="hasRole('ROLE_ADMINISTRADOR')">Aceptar Solicitud</th> 
+                            <th sec:authorize="hasRole('ROLE_ADMINISTRADOR')">Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="usuario : ${listaUsuarios}">
+                            <td th:text="${usuario.empleo}">Mostrar Empleo</td>
+                            <td th:text="${usuario.nombre}">Mostrar Nombre</td>
+                            <td th:text="${usuario.apellido1}">Mostrar Primer Apellido</td>
+                            <td th:text="${usuario.apellido2}">Mostrar Segundo Apellido</td>
+                            <td th:text="${usuario.mail}">Mostrar Email</td>
+                            <td th:text="${usuario.departamento}">Mostrar Departamento</td>
+                            <td sec:authorize="hasRole('ROLE_ADMINISTRADOR')">
+                                <a th:href="@{/aceptarSolicitud/} + ${usuario.idusuario}" th:text="Aceptar"/>
+                            </td>
+                            <td sec:authorize="hasRole('ROLE_ADMINISTRADOR')">
+                                <a th:href="@{/eliminarSolicitud/} + ${usuario.idusuario}" th:text="Eliminar"
+                                   onclick="return confirm('¿Está seguro de eliminar esta solicitud? Este paso es irreversible.');"/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div th:if="${listaUsuarios == null or listaUsuarios.empty}">
+                No existen solicitudes pendientes de revisar.
+            </div>
+        </div>
+        <br/>
+        <footer th:replace="layout/plantillas::footer"/>
+    </body>
+</html>

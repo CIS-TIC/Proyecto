@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <meta charset="UTF-8" />
+        <title>Editar Aula SVERGA</title>
+        <link rel="stylesheet" type="text/css" href="static/css/_main.css" th:href="@{/css/_main.css}"/>
+        <link rel="stylesheet" type="text/css" href="static/css/bootstrap.css" th:href="@{/css/bootstrap.css}"/>
+    </head>
+
+    <body class="body1" style="background-color:#FFF2CC; padding-bottom: 220px;">
+        <header th:replace="layout/plantillas::header"/>
+        <br/>
+        <nav th:replace="layout/plantillas::nav"/>
+        <br/>
+
+        <div class="container text-center">
+            <div class="recuadro_admin_central" style="width: 50%; margin: auto;">
+                <h1>Datos aula nueva</h1>
+                
+                <form th:action="@{/editarAula/} + ${aula.idaula}" method="post" th:object="${aula}">
+                    
+                    <!--Id-->
+                    <div class="form-floating mb-3">
+                        <input id="idaula" type="text" class="form-control" th:field="*{idaula}" required="" autofocus="autofocus"/>
+                        <label for="idaula">Id. Aula</label>
+                    </div>
+                    <!--Edificio-->
+                    <div class="form-floating mb-3">
+                        <input id="edificio" type="text" class="form-control" th:field="*{edificio}"></input>
+                        <label for="edificio">Edificio</label>
+                    </div>
+                    <!--Nombre-->
+                    <div class="form-floating mb-3">
+                        <input id="nombre" type="text" class="form-control" th:field="*{nombre}"></input>
+                        <label for="nombre">Nombre</label>
+                    </div>
+                    <!--Capacidad-->
+                    <div class="form-floating mb-3">
+                        <input id="capacidad" type="text" class="form-control" th:field="*{capacidad}"></input>
+                        <label for="capacidad">Capacidad</label>
+                    </div>
+                    <!--Puestos-->
+                    <div class="form-floating mb-3">
+                        <input id="puestos" type="text" class="form-control" th:field="*{puestos}"></input>
+                        <label for="puestos">Puestos</label>
+                    </div>
+                    <!--Módulo-->
+                    <div class="form-floating mb-3">
+                        <input id="modulo" type="text" class="form-control" th:field="*{modulo}"></input>
+                        <label for="modulo">Módulo</label>
+                    </div>
+
+                    <!--CheckBoxes-->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-check form-switch text-start">
+                                <input class="form-check-input" type="checkbox" role="switch" id="zar" th:field="*{zar}"/>
+                                <label class="form-check-label" for="zar">ZAR</label>
+                            </div>
+
+                            <div class="form-check form-switch text-start">
+                                <input class="form-check-input" type="checkbox" role="switch" id="rap" th:field="*{rap}"/>
+                                <label class="form-check-label" for="rap">RAP</label>
+                            </div>
+
+                            <div class="form-check form-switch text-start">
+                                <input class="form-check-input" type="checkbox" role="switch" id="red_ossorio" th:field="*{red_ossorio}"/>
+                                <label class="form-check-label" for="red_ossorio">Red Ossorio</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-check form-switch text-start">
+                                <input class="form-check-input" type="checkbox" role="switch" id="wan_pg" th:field="*{wan_pg}"/>
+                                <label class="form-check-label" for="wan_pg">WAN-PG</label>
+                            </div>
+
+                            <div class="form-check form-switch text-start">
+                                <input class="form-check-input" type="checkbox" role="switch" id="proyector" th:field="*{proyector}"/>
+                                <label class="form-check-label" for="proyector">Proyector</label>
+                            </div>
+
+                            <div class="form-check form-switch text-start">
+                                <input class="form-check-input" type="checkbox" role="switch" id="pizarra_digital" th:field="*{pizarra_digital}"/>
+                                <label class="form-check-label" for="pizarra_digital">Pizarra digital</label>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <!--Extras-->
+                    <div class="form-floating mb-3">
+                        <input id="extras" type="text" class="form-control" th:field="*{extras}"></input>
+                        <label for="extras">Otros equipamientos</label>
+                    </div>
+                    <br/>
+                    <!--Guardar datos en la BD-->
+                    <button  type="submit" class="btn btn-success"  id="submitbutton" >Editar Aula</button>
+                    <!--Regresa a la pagina de listado de aulas-->
+                    <a class="btn btn-danger" th:href="@{/mostrarAulas}">Cancelar</a>
+                    <br/>
+                </form>
+            </div>
+        </div>
+        <br/>
+        <footer th:replace="layout/plantillas::footer"/>
+
+        <!--FILTROS-->
+        <!--El siguiente script limita la longitud del campo IDAULA a 20-->
+        <script>
+            var idaulaInput = document.getElementById("idaula");
+            idaulaInput.addEventListener("input", function () {
+            idaulaInput.value = idaulaInput.value.substring(0, 20);
+            });
+        </script>
+
+        <!--El siguiente script limita la longitud del campo EDIFICIO a 20-->
+        <script>
+            var edificioInput = document.getElementById("edificio");
+            edificioInput.addEventListener("input", function () {
+            edificioInput.value = edificioInput.value.substring(0, 20);
+            });
+        </script>
+
+        <!--El siguiente script limita la longitud del campo NOMBRE a 45-->
+        <script>
+            var nombreInput = document.getElementById("nombre");
+            nombreInput.addEventListener("input", function () {
+            nombreInput.value = nombreInput.value.substring(0, 45);
+            });
+        </script>
+
+        <!--El siguiente script sólo permite introducir números en el campo CAPACIDAD-->
+        <script>
+            var capacidadInput = document.getElementById("capacidad");
+            capacidadInput.addEventListener("input", function () {
+            capacidadInput.value = capacidadInput.value.replace(/\D/g, "");
+            });
+        </script>
+
+        <!--El siguiente script sólo permite introducir números en el campo PUESTOS-->
+        <script>
+            var puestosInput = document.getElementById("puestos");
+            puestosInput.addEventListener("input", function () {
+            puestosInput.value = puestosInput.value.replace(/\D/g, "");
+            });
+        </script>
+
+        <!--El siguiente script limita la longitud del campo MODULO a 45-->
+        <script>
+            var moduloInput = document.getElementById("modulo");
+            moduloInput.addEventListener("input", function () {
+            moduloInput.value = moduloInput.value.substring(0, 45);
+            });
+        </script>
+
+        <!--El siguiente script limita la longitud del campo EXTRAS a 255-->
+        <script>
+            var extrasInput = document.getElementById("extras");
+            extrasInput.addEventListener("input", function () {
+            extrasInput.value = extrasInput.value.substring(0, 255);
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+    <head>
+        <meta charset="UTF-8" />
+        <title>Bienvenido a SVERGA</title>
+        <link rel="stylesheet" type="text/css" href="static/css/_main.css" th:href="@{/css/_main.css}"/>
+        <link rel="stylesheet" type="text/css" href="static/css/bootstrap.css" th:href="@{/css/bootstrap.css}"/>
+    </head>
+    <body class="body1" style="background-color:#FFF2CC;">
+        <header th:replace="layout/plantillas::header"/>
+        <br/>
+        <nav th:replace="layout/plantillas::nav"/>
+        <br/>
+
+        <div class="container text-center">
+
+            <div class="recuadro_central_busqueda" sec:authorize="hasAnyRole('ROLE_ADMINISTRADOR', 'ROLE_COORDINADOR', 'ROLE_USER')" style="width: 50%; margin: auto;">
+                <h1>Acceda a la sección:</h1>
+                <br/>
+                <a class="btn btn-primary" sec:authorize="hasRole('ROLE_ADMINISTRADOR')" th:href="@{/administrador}">Administrador</a> 
+
+                <a class="btn btn-primary" sec:authorize="hasRole('ROLE_COORDINADOR')" th:href="@{/coordinador}">Coordinador</a>
+
+                <a class="btn btn-primary" sec:authorize="hasRole('ROLE_USER')" th:href="@{/profesor}">Usuario / Profesor</a>
+                <br/>
+            </div>
+            <div class="recuadro_central_busqueda" sec:authorize="hasRole('ROLE_PENDIENTE')">
+                <h3>Su solicitud de alta está pendiente de ser aceptada.</h3>
+            </div>
+        </div>
+        <footer th:replace="layout/plantillas::footer"/>
+    </body>
+</html>

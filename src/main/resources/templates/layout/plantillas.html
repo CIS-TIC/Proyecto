@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"><!-- Nos obliga a cerrar todas las etiquetas, bien formado -->
+
+    <head>
+        <title>Plantilla</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/><!-- Para diferentes dispositivos -->
+    </head>
+
+    <body>
+        <!--HEADER Para todas las páginas-->
+        <header class="header-frame">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="static/img/emblema_armada.png" th:src="@{/img/emblema_armada.png}" alt="Emblema_Armada" class="img-fluid"/>
+                    </div>
+                    <div class="col-4">
+                        <a class="navbar-brand" href="#" th:href="@{/}"><img src="static/img/pedrosverga.png" th:src="@{/img/pedrosverga.png}" alt="LogoMapaches" class="img-fluid" style="padding: 10px;"/></a>
+                    </div>
+                    <div class="col-4"> 
+                        <img src="static/img/eeae_2.png"  th:src="@{/img/eeae_2.png}" alt="SVERGA" class="img-fluid"/>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!--Barra con el BOTON CERRAR SESION Para todas las páginas cuando estamos identificados-->
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid text-center">
+                <div class="col" th:if="${#httpServletRequest.requestURI != '/'}">
+                    <a class="btn btn-primary" href="#" th:href="@{/}">Regresar a Inicio</a>
+                </div>
+                
+                <div class="col">
+                    <h4>
+                        Bienvenido a SVERGA <span sec:authentication="principal.username"></span>
+                    </h4>
+                </div>
+                
+                <div class="col">
+                    <button type="button" class="btn btn-danger" onclick="window.modal.showModal();">Cerrar Sesión</button>
+                </div>
+            </div>
+            
+            <!--Ventana modal para confirmacion de cierre sesion-->
+            <div class="container text-center">
+                <dialog id="modal">
+                    <h2>¿Está seguro de que desea cerrar la sesión?</h2>
+                    <p>NOTA: Dejar este texto aquí por si hubiera que añadir algo después</p>
+                    <button type="button" class="btn btn-primary" onclick="window.modal.close();">
+                        No, mantener la sesión abierta
+                    </button>
+                    <button type="button" class="btn btn-danger" onclick="window.location.href=logoutUrl">Sí, cerrar la sesión</button>
+                </dialog>
+            </div>
+            
+            <script th:inline="javascript">
+                /*<![CDATA[*/
+                var logoutUrl = /*[[@{/logout}]]*/ 'logout';
+                /*]]>*/
+            </script>
+        </nav>
+
+
+        <!--FOOTER Para todas las páginas-->
+        <footer class="header-frame" th:fragment="footer" style="position:absolute; bottom: 0; width: 100%; height:200px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3 style="color: white;"></h3>
+                        <!-- Se puede añadir texto aquí si se desea. De lo contrario, esta línea se pueden eliminar-->
+                        <p style="color: white;"></p>
+                        <!-- Se puede añadir texto aquí si se desea. De lo contrario, esta línea se pueden eliminar-->
+                    </div>
+                    <div class="col-md-6">
+                        <h3 style="color: white;">Soporte para la aplicación</h3>
+                        <p style="color: white;">Correo electrónico aquí</p>
+                        <p style="color: white;">Teléfono aquí</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
