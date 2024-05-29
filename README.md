@@ -14,7 +14,8 @@
 ## Documentación
 :link:[Enlace carpeta de contenidos](https://1drv.ms/f/s!Aixurhs-zJm9bmkndDmPo6mAk1Q?e=WchtPc)
 ### Base de Datos
-![Esquema DB](https://github.com/CIS-TIC/Proyecto/blob/main/Recursos/E-R%20SVERGA%206.0.drawio.png)
+![Esquema DB](https://github.com/CIS-TIC/Proyecto/blob/main/Recursos/SVERGA%20E-R%206.0.drawio.png)
+
 
 | ENTIDAD | ATRIBUTOS |
 | --- | --- |
