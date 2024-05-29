@@ -23,7 +23,7 @@
 | roles_usuarios | (**idusuario**, **rol**) |
 | reservas | (**idreserva**, *fk_solicitante*, *fk_autorizador*, *fk_aula*, num_alumnos, civil_militar, ejercito, estado_reserva, observaciones) |
 | aulas | (**idaula**, edificio, nombre, capacidad, puestos, modulo, zar, rap, red_ossorio, wan_pg, proyector, pizarra_digital, extras) |
-| calendario | (**inicio**, **fk_reserva**, fin, tipo, num_hora) |
+
 
 
 
