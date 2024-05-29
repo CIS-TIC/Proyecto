@@ -27,7 +27,8 @@
 
 
 
-![Diseño final DB](https://github.com/CIS-TIC/Proyecto/blob/main/Recursos/RELACIONAL%20SVERGA%206.0.png)
+![Diseño final DB](https://github.com/CIS-TIC/Proyecto/blob/main/Recursos/RELACIONAL%20SVERGA%206.0%2B.png)
+
 
 
 
