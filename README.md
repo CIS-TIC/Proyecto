@@ -12,7 +12,7 @@
 >[!TIP]
 >+ USUARIOS: Cambiar/anular solicitud aprobada?
 ## Documentación
-:link:[Enlace carpeta de contenidos](https://1drv.ms/f/s!Aixurhs-zJm9bmkndDmPo6mAk1Q?e=WchtPc)
+:link:[Enlace carpeta de contenidos](https://1drv.ms/f/c/bd99cc3e1bae6e2c/Eixurhs-zJkggL1uAAAAAAABhLj2wwH3PLojPXu3PmgDMg?e=U0cYJI)
 ### Base de Datos
 ![Esquema DB](https://github.com/CIS-TIC/Proyecto/blob/main/Recursos/SVERGA%20E-R%206.0.drawio.png)
 
