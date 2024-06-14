@@ -1,0 +1,12 @@
+TIENE QUE HABER CONEXION POR TRONCALES
+
+vtp domain cesar
+vtp password cesar
+vtp mode server/client/transparent
+! vtp version 2
+
+!! servidor-->se crean las vlans y las propaga
+!! client-->son los que reciben las vlans creadas
+!! transparent-->no recibe las vlans creadas, 
+	!! podemos crear vlans para usarlas 
+	!! solo localmente (en ese switch)

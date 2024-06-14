@@ -1,0 +1,72 @@
+ena
+conf t
+
+no ip domain-lookup
+hostname S3
+enable secret class
+service password-encryption
+banner motd #ATENCION MENSAJE DEL DIA#
+
+vtp domain prg
+vtp password prg
+vtp mode client
+
+int vlan 66
+ip add 192.168.66.132 255.255.255.240
+no shut
+
+interface f0/1
+description troncal a S1
+switchport mode trunk
+switchport trunk native vlan 99
+switchport nonegotiate
+no shutdown
+
+interface f0/5
+description acceso vlan 10
+switchport mode access
+switchport access vlan 10
+no shutdown
+
+interface f0/10
+description acceso vlan 20
+switchport mode access
+switchport access vlan 20
+no shutdown
+
+interface f0/15
+description acceso vlan 30
+switchport mode access
+switchport access vlan 30
+no shutdown
+
+interface f0/20
+description acceso vlan 66
+switchport mode access
+switchport access vlan 66
+no shutdown
+
+interface range f0/2-4,f0/6-9,f0/11-14,f0/16-19,f0/21-24
+description acceso vlan negra
+switchport mode access
+switchport access vlan 88
+shutdown
+
+ip domain-name prg.com
+username admin privilege 15 secret admin
+line vty 0 15
+transport input ssh
+login local
+exit
+ip ssh version 2
+crypto key generate rsa
+1024
+
+line con 0
+password cisco
+login
+loggin synchronous 
+exit
+ip default-gateway 192.168.66.129
+exit
+wr

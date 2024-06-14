@@ -1,0 +1,88 @@
+ena
+conf t
+
+!!!! ACTIVAR EL MODULO DE SEGURIDAD securityk9
+
+license boot module c2900 technology-package securityk9
+
+!!!!!!!!ACEPTAR LICENCIA
+
+!!!!PARA VERIFICAR --> show version "security securityk9 Evaluation securityk9"
+
+
+end
+wr
+reload
+
+
+
+
+!!! CONFIGURAR PARAMETROS IPSEC
+
+!!! permitir trafico de la LAN de R1 a la LAN de R2
+ena
+conf t
+access-list 102 permit ip 10.0.0.0 0.255.255.255 172.16.0.0 0.0.3.255 
+!!! permitir trafico de la LAN de R1 a la LAN de R3
+access-list 103 permit ip 10.0.0.0 0.255.255.255 172.16.4.0 0.0.3.255 
+
+
+
+
+!!! 1º FASE ISAKMP
+
+crypto isakmp policy 102
+encryption aes
+authentication pre-share
+group 5
+exit
+crypto isakmp key cisco address 64.100.13.2
+
+crypto isakmp policy 103
+encryption aes
+authentication pre-share
+group 5
+exit
+crypto isakmp key cisco address 64.102.46.2
+
+!!! 2º FASE ISAKMP
+!!! crear conjunto de transformaciones VPN-SET para usar esp-aes y esp-sha-hmac
+
+crypto ipsec transform-set R1_R2_Set esp-aes esp-sha-hmac
+crypto map R1_R2_Map 102 ipsec-isakmp
+set peer 64.100.13.2
+set transform-set R1_R2_Set
+match address 102
+exit
+
+crypto ipsec transform-set R1_R3_Set esp-aes esp-sha-hmac
+crypto map R1_R2_Map 103 ipsec-isakmp
+set peer 64.102.46.2
+set transform-set R1_R3_Set
+match address 103
+exit
+
+!!!VINCULAR LA ASIGNACION CRIPTOGRAFICA AL SERIAL0/0/0
+
+int s0/0/0
+crypto map R1_R2_Map
+crypto map R1_R3_Map
+exit
+
+!!!!!!CONFIGURAR TUNELES GRE POR IPSEC
+
+int tunnel 0
+!!ip del tunel
+ip address 192.168.0.1 255.255.255.252
+!!interface del tunel
+tunnel source s0/0/0
+!!ip del otro extremo del tunel
+tunnel destination 64.100.13.2
+tunnel mode gre ip
+no shut
+exit
+!!!PUBLICAR LA RED EN EIGRP o OSPF
+router eigrp 1
+net 192.168.0.0 255.255.255.252
+
+!!!!!!!! HACER LA CONFIGURACION EN AMBOS ROUTER !!!!!!

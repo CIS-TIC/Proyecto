@@ -1,0 +1,24 @@
+¡¡ LEVANTAR LA INTERFACE G0/0 !!
+
+
+interface f0/1
+no shutdown
+interface f0/1.30
+encapsulation dot1q 30
+ip address 172.16.30.1 255.255.255.0  
+interface f0/1.35
+encapsulation dot1q 35
+ip address 172.16.35.1 255.255.255.192
+interface f0/1.40
+encapsulation dot1q 40 native
+ip address 172.16.40.249 255.255.255.248 
+interface f0/1.45
+encapsulation dot1q 45 !!!!OJO LA NATIVA
+ip address 172.17.99.1 255.255.255.0
+
+ (asignacion de IP a la SUBINTERFACE)
+
+
+! para reencaminar el trafico DHCP hacia el servidor DHCP
+
+ip helper-address 192.168.1.100

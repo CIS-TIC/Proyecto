@@ -1,0 +1,18 @@
+ena
+conf t
+
+hostname ISP
+!
+interface Gig0/0/1
+ ip address 100.100.100.1 255.255.255.0
+no shut
+
+!
+interface Gig0/0/0
+ip address 64.104.13.129 255.255.255.252
+no shut
+
+
+ip route 0.0.0.0 0.0.0.0 f0/0
+end
+wr

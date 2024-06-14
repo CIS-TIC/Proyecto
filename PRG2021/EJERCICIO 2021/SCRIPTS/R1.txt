@@ -1,0 +1,47 @@
+ena
+conf t
+
+hostname R1
+
+interface f0/0
+no shutdown
+
+interface f0/0.10
+description conexion vlan 10
+encapsulation dot1q 10
+ip address 192.168.0.1 255.255.192.0 
+ 
+interface f0/0.20
+description conexion vlan 20
+encapsulation dot1q 20
+ip address 192.168.64.1 255.255.254.0
+
+interface f0/0.30
+description conexion vlan 30
+encapsulation dot1q 30
+ip address 192.168.66.1 255.255.255.128 
+
+interface f0/0.66
+description conexion vlan 66
+encapsulation dot1q 66
+ip address 192.168.66.129 255.255.255.240
+exit
+
+int s0/0/0
+description conexion R2
+ip add 10.0.0.1 255.255.255.252
+no shut
+
+router ospf 1
+router-id 1.1.1.1
+network 192.168.0.0 0.0.63.255 area 1
+network 192.168.64.0 0.0.1.255 area 1
+network 192.168.66.0 0.0.0.127 area 1
+network 192.168.66.128 0.0.0.15 area 1
+net 10.0.0.0 0.0.0.3 area 1
+passive-interface f0/0.10
+passive-interface f0/0.20
+passive-interface f0/0.30
+passive-interface f0/0.66
+end
+wr

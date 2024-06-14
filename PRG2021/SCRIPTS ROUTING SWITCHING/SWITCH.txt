@@ -1,0 +1,17 @@
+enable
+configure terminal
+hostname BRANCH-2
+no ip domain-lookup
+enable secret class
+service password-encryption
+Line Con 0
+password cisco
+login
+loggin synchronous
+exit
+line vty 0 15
+password cisco
+login
+exit
+banner motd #SOLO PERSONAL AUTORIZADO#
+ip default-gateway 192.168.99.1

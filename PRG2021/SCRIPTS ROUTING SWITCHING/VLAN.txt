@@ -1,0 +1,31 @@
+vlan 10
+name Diez
+
+vlan 20
+name Veinte
+
+vlan 99
+name Nativa
+!!!!VLAN NATIVA, se le asocia eltrafico sin etiquetar
+
+interface0/1
+description ????
+switchport mode access
+switchport access vlan 10 !!si no existe la vlan la crea
+no shutdown
+
+interface vlan 99
+description ????
+ip address xxIPxx xxMASCARAxx
+no shutdown
+
+interface range f0/1-4
+description troncal
+switchport mode trunk
+switchport trunk native vlan 99  !!!!VLAN NATIVA, se le asocia eltrafico sin etiquetar
+no shutdown
+switchport trunk allowed vlan 5,15,20,25
+
+switchport mode dynamic desirable (usar DTP (negociacion) para iniciar un enlace troncal)
+switchport mode nonegotiate (deshabilitar DTP)
+switchport trunk allowed vlan 10,20,88 (restringir las VLAN permitidas en un enlace troncal)

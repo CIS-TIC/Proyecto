@@ -1,0 +1,45 @@
+ena
+conf t
+
+hostname R2
+
+int s0/0/0
+description conexion R1
+ip add 10.0.0.2 255.255.255.252
+no shut
+
+int s0/0/1
+description conexion R3
+ip add 10.0.0.5 255.255.255.252
+no shut
+
+int f0/0
+description conexion SW-192
+ip add 192.16.0.1 255.255.224.0
+no shut
+
+router ospf 1
+net 192.16.0.0 0.0.31.255 area 1
+net 10.0.0.0 0.0.0.3 area 1
+net 10.0.0.4 0.0.0.3 area 1
+passive-interface f0/0
+redistribute eigrp 1 subnets
+default-information originate 
+
+router eigrp 1
+net 192.16.0.0 0.0.31.255
+net 10.0.0.0 0.0.0.3
+net 10.0.0.4 0.0.0.3
+no auto-summary
+passive-interface f0/0
+redistribute ospf 1 metric 10000 100 255 1 1500
+
+
+service dhcp
+ip dhcp excluded-address 192.16.0.1 192.16.0.10
+ip dhcp pool SW192
+network 192.16.0.0 255.255.224.0
+default-router 192.16.0.1
+dns-server 100.100.100.100
+end
+wr
