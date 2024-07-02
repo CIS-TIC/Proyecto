@@ -7,7 +7,7 @@ CHANGE COLUMN `num_hora` `num_hora` VARCHAR(20) NOT NULL ;
 /*QUERY DE CREACIÓN DE USUARIO*/
 
 INSERT INTO usuarios (idusuario,nombre,apellido1,apellido2,empleo,mail,telefono,departamento,prim_inicio,estado,clave)
-VALUES (1, "Antonio", "Saúca", "Guerrero","Sargento Primero","asaugue@fn.mde.es",666764906,"Informática",1,"Conectado","123");
+VALUES (1, "Fulanito", "Fulanitez", "Fulanitez","Civil","fulanito@mail.com",123456789,"Informática",1,"Conectado","123");
 
 /*ASIGNAR ROL A USUARIO*/
 
